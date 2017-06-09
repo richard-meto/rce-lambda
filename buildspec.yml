@@ -22,4 +22,4 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/rce-lambda-1.0.jar
+    - rce-lambda-1.0.jar
