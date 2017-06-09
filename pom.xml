@@ -7,6 +7,8 @@
   <groupId>rce.test</groupId>
   <artifactId>rce-lambda</artifactId>
   <version>develop</version>
+         
+  <packaging>jar</packaging>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -53,9 +55,9 @@
 
   </dependencies>
 
-  <build>
+<!--  <build>
     <plugins>
-      <!-- creates the fat jar-->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -74,5 +76,6 @@
       </plugin>
     </plugins>
   </build>
+-->
 
 </project>
