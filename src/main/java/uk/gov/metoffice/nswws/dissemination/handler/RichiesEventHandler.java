@@ -3,6 +3,7 @@ package uk.gov.metoffice.nswws.dissemination.handler;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import uk.gov.metoffice.nswws.dissemination.domain.events.NswwsWarningsRetrievedEvent;
 
 import java.io.InputStream;
 import java.io.OutputStream;

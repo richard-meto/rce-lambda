@@ -73,6 +73,11 @@
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sts</artifactId>
         </dependency>
+        <dependency>
+            <groupId>uk.gov.metoffice.nswws.dissemination.domain</groupId>
+            <artifactId>nswws-dissemination-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
