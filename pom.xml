@@ -84,16 +84,16 @@
 -->
     </dependencies>
 
-    <build>
-<!--
-        <extensions>
-            <extension>
-                <groupId>org.springframework.build</groupId>
-                <artifactId>aws-maven</artifactId>
-                <version>5.0.0.RELEASE</version>
-            </extension>
-        </extensions>
--->
+    <!--   <build>
+
+           <extensions>
+               <extension>
+                   <groupId>org.springframework.build</groupId>
+                   <artifactId>aws-maven</artifactId>
+                   <version>5.0.0.RELEASE</version>
+               </extension>
+           </extensions>
+
 
         <plugins>
             <plugin>
@@ -114,6 +114,6 @@
             </plugin>
         </plugins>
 
-    </build>
+    </build> -->
 
 </project>
