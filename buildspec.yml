@@ -5,10 +5,10 @@ env:
     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
 
 phases:
-#  pre_build:
-#    commands:
-#      - echo Creating directories...
-#      - mkdir lib
+  pre_build:
+    commands:
+      - echo Creating directories...
+      - mkdir lib
   build:
     commands:
       - echo Build test stage started on `date`
@@ -17,6 +17,9 @@ phases:
     commands:
       - echo Build package phase completed on `date`
       - mvn package
+      - echo file list
+      - ls
+      - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
 artifacts:
   files:
     - target/rce-lambda-develop.jar
