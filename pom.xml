@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <distributionManagement>
+<!--    <distributionManagement>
         <repository>
             <id>aws-release</id>
             <name>AWS Release Repository</name>
@@ -28,6 +28,7 @@
             <url>s3://codepipeline-eu-west-1-nswws-code-repo/snapshot</url>
         </snapshotRepository>
     </distributionManagement>
+-->
 
     <dependencyManagement>
         <dependencies>
