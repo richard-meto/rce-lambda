@@ -15,5 +15,5 @@ phases:
       - mvn package
 artifacts:
   files:
-    - rce-lambda-develop.jar
+    - lib/rce-lambda-develop.jar
   base-directory: lib
