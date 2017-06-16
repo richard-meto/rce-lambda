@@ -20,3 +20,4 @@ phases:
 artifacts:
   files:
     - lib/rce-lambda-develop.jar
+  base-directory : lib
