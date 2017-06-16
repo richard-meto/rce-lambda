@@ -22,4 +22,4 @@ phases:
       - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
 artifacts:
   files:
-    - target/rce-lambda-develop.jar
+    - lib/rce-lambda-develop.jar
