@@ -14,7 +14,6 @@ phases:
       - echo Build package phase completed on `date`
       - mvn package
 artifacts:
-  type : zip
   files:
     - rce-lambda-develop.jar
   base-directory: lib
