@@ -13,7 +13,7 @@ public class RichiesEventHandler implements RequestStreamHandler {
 
     @Override
     public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) {
-        System.out.println("Test lambda 2");
+        System.out.println("Test lambda 3");
         //NswwsWarningsRetrievedEvent n = new NswwsWarningsRetrievedEvent();
         // System.out.println("Test lambda");
     }
