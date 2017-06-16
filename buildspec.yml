@@ -11,9 +11,9 @@ phases:
       - mvn package
   post_build:
     commands:
-#      - cd target
+      - cd target
       - echo file list
-      - ll
+      - ls -l
 #      - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
 artifacts:
   files:
