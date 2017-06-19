@@ -67,12 +67,11 @@
             <artifactId>aws-java-sdk-sts</artifactId>
         </dependency>
 
-<!--        <dependency>
+        <dependency>
             <groupId>rce-domain</groupId>
             <artifactId>rce-domain</artifactId>
             <version>1.0</version>
         </dependency>
--->
 
     </dependencies>
     <build>
