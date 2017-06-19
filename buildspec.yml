@@ -26,10 +26,10 @@ artifacts:
   packaging: NONE
   location: S3://codepipeline-eu-west-1-434171244669
   path: rich-pipeline/build-test
-  files:
-    - lib/rce-lambda-develop.jar
+#  files:
+#    - lib/rce-lambda-develop.jar
   name: rce-lambda-develop.jar
-  discard-paths: yes
+#  discard-paths: yes
 
 # Check
 
