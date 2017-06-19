@@ -20,6 +20,9 @@ phases:
       - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
       - cd lib
       - ls -l
+      - echo ------------------------------------------------------
+      - env
+      - echo ------------------------------------------------------
       - echo finished build
 artifacts:
   files:
