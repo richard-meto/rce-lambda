@@ -7,11 +7,11 @@ env:
 phases:
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - echo creating build directories and fetching dependencies...
       - mkdir lib
       - echo =====================================================
       - echo listing contents of build repo
-      - aws s3 ls s3://codepipeline-eu-west-1-nswws-code-repo
+      - aws s3 ls s3://codepipeline-eu-west-1-nswws-code-repo/release
       - echo =====================================================
   build:
     commands:
