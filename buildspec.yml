@@ -21,7 +21,9 @@ phases:
       - echo copy built artifact to lib directory so deployed jar works as a lambda
       - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
       - echo post build completed on `date`
-      - aws cloudformation package --template $INPUT_FILE -- s3 -bucket $S3_BUCKET --output-template rce-lambda-develop.jar
+      - echo listing target-build directory
+      - aws s3 ls s3://codepipeline-eu-west-1-nswws-lambda-target/build
+      - aws s3 cp /target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build
 artifacts:
   files:
     - lib/rce-lambda-develop.jar
