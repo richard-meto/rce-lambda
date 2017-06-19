@@ -9,10 +9,11 @@ phases:
     commands:
       - echo creating build directories and fetching dependencies...
       - mkdir lib
-      - echo =====================================================
-      - echo listing contents of build repo
-      - aws s3 ls s3://codepipeline-eu-west-1-nswws-code-repo/release
-      - echo =====================================================
+      - echo copying dependencies from s3 to build path
+      - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources
+      - echo listing resources
+      - cd src/main/resources
+      - ls -l
   build:
     commands:
       - echo build phase started on `date`
