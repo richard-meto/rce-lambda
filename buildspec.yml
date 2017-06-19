@@ -24,11 +24,11 @@ phases:
       - echo finished build
 artifacts:
   type: S3
+  location: S3://codepipeline-eu-west-1-434171244669
+  name: rce-lambda-develop.jar
   packaging: NONE
   namespaceType : NONE
-  location: S3://codepipeline-eu-west-1-434171244669
   path: rich-pipeline/build-test
   files:
     - lib/rce-lambda-develop.jar
-  name: rce-lambda-develop.jar
   discard-paths: yes
