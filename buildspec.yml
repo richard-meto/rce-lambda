@@ -25,6 +25,7 @@ phases:
 artifacts:
   type: S3
   packaging: NONE
+  namespaceType : NONE
   location: S3://codepipeline-eu-west-1-434171244669
   path: rich-pipeline/build-test
   files:
