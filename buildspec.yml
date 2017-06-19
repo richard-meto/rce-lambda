@@ -18,7 +18,7 @@ phases:
       - echo post build completed on `date`
       - mvn package
       - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
-#       - cp target/rce-lambda-develop.jar S3://codepipeline-eu-west-1-434171244669/rich-pipeline/build/rce-lambda-develop.jar
+      - cp target/rce-lambda-develop.jar S3://codepipeline-eu-west-1-434171244669/rich-pipeline/build/rce-lambda-develop.jar
       - cd lib
       - ls -l
       - echo finished build
