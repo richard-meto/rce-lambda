@@ -44,14 +44,6 @@
         </repositories>
     -->
 
-    <repositories>
-        <repository>
-            <id>rce.domain</id>
-            <name>rce-domain</name>
-            <url>file://${basedir}/src/main/resources</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -77,10 +69,19 @@
             <artifactId>aws-java-sdk-sts</artifactId>
         </dependency>
 
+<!--        <dependency>
+            <groupId>rce.domain</groupId>
+            <artifactId>rce-domain</artifactId>
+            <version>1.0</version>
+        </dependency>
+        -->
+
         <dependency>
             <groupId>rce.domain</groupId>
             <artifactId>rce-domain</artifactId>
             <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/rce-domain-1.0.jar</systemPath>
         </dependency>
 
     </dependencies>
