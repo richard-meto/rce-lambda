@@ -3,6 +3,8 @@ version: 0.2
 env:
   variables:
     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+    INPUT_FILE: ""
+    S3_BUCKET: "S3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-simple-lambda.yaml"
 
 phases:
   pre_build:
@@ -19,7 +21,7 @@ phases:
       - echo copy built artifact to lib directory so deployed jar works as a lambda
       - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
       - echo post build completed on `date`
-      - aws cloudformation package --output-template rce-lambda-develop.jar
+      - aws cloudformation package --template $INPUT_FILE -- s3 -bucket $S3_BUCKET --output-template rce-lambda-develop.jar
 artifacts:
   files:
     - lib/rce-lambda-develop.jar
