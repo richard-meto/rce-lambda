@@ -22,7 +22,8 @@ phases:
       - ls -l
       - echo finished build
 artifacts:
-  type: NONE
+  type: S3
   files:
     - lib/rce-lambda-develop.jar
+  name: rce-lambda-develop.jar
   discard-paths: yes
