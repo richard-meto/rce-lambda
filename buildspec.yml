@@ -27,7 +27,7 @@ artifacts:
   discard-paths: yes
   packaging: ZIP
   namespaceType : NONE
-  type: S3
+  type: NO_ARTIFACTS
   location: S3://codepipeline-eu-west-1-nswws-lambda-target
   path: rich-pipeline/build
   name: rce-lambda-develop.jar
