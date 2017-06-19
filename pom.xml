@@ -14,14 +14,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-<!--    <distributionManagement>
-        <repository>
-            <id>rce-release-repo</id>
-            <name>RCE Release Repository</name>
-            <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
-        </repository>
-    </distributionManagement>
--->
+    <!--    <distributionManagement>
+            <repository>
+                <id>rce-release-repo</id>
+                <name>RCE Release Repository</name>
+                <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
+            </repository>
+        </distributionManagement>
+    -->
 
     <dependencyManagement>
         <dependencies>
@@ -35,14 +35,22 @@
         </dependencies>
     </dependencyManagement>
 
-<!--    <repositories>
+    <!--    <repositories>
+            <repository>
+                <id>rce.domain</id>
+                <name>rce-domain</name>
+                <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
+            </repository>
+        </repositories>
+    -->
+
+    <repositories>
         <repository>
             <id>rce.domain</id>
             <name>rce-domain</name>
-            <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
+            <url>file://${basedir}/src/main/resources</url>
         </repository>
     </repositories>
--->
 
     <dependencies>
         <dependency>
@@ -70,21 +78,21 @@
         </dependency>
 
         <dependency>
-            <groupId>rce-domain</groupId>
+            <groupId>rce.domain</groupId>
             <artifactId>rce-domain</artifactId>
             <version>1.0</version>
         </dependency>
 
     </dependencies>
     <build>
-<!--        <extensions>
-            <extension>
-                <groupId>org.springframework.build</groupId>
-                <artifactId>aws-maven</artifactId>
-                <version>5.0.0.RELEASE</version>
-            </extension>
-        </extensions>
--->
+        <!--        <extensions>
+                    <extension>
+                        <groupId>org.springframework.build</groupId>
+                        <artifactId>aws-maven</artifactId>
+                        <version>5.0.0.RELEASE</version>
+                    </extension>
+                </extensions>
+        -->
 
         <plugins>
             <plugin>
