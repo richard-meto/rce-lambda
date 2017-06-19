@@ -23,11 +23,11 @@ phases:
       - ls -l
       - echo finished build
 artifacts:
+  packaging: ZIP
+  namespaceType : NONE
   type: S3
   location: S3://codepipeline-eu-west-1-434171244669
   name: rce-lambda-develop.jar
-  packaging: NONE
-  namespaceType : NONE
   path: rich-pipeline/build
   files:
     - lib/rce-lambda-develop.jar
