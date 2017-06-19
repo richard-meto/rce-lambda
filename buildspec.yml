@@ -31,6 +31,8 @@ artifacts:
   name: rce-lambda-develop.jar
   discard-paths: yes
 
+# Check
+
 #Location: String
 #Name: String
 #NamespaceType: String
