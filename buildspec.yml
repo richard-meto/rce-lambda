@@ -3,14 +3,16 @@ version: 0.2
 env:
   variables:
     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
-    INPUT_FILE: ""
-    S3_BUCKET: "S3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-simple-lambda.yaml"
 
 phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
       - mkdir lib
+      - echo =====================================================
+      - echo listing contents of build repo
+      - aws s3 ls s3://codepipeline-eu-west-1-nswws-code-repo
+      - echo =====================================================
   build:
     commands:
       - echo build phase started on `date`
@@ -18,12 +20,9 @@ phases:
   post_build:
     commands:
       - mvn package
-      - echo copy built artifact to lib directory so deployed jar works as a lambda
-      - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
-      - echo post build completed on `date`
-      - echo listing target-build directory
-      - aws s3 ls s3://codepipeline-eu-west-1-nswws-lambda-target/build/
+      - copying build artifact to
       - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
+      - echo post build completed on `date`
 #artifacts:
 #  files:
 #    - lib/rce-lambda-develop.jar
