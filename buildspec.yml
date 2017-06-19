@@ -22,11 +22,18 @@ phases:
       - ls -l
       - echo finished build
 artifacts:
-  packaging: NONE
   type: S3
+  packaging: NONE
   location: S3://codepipeline-eu-west-1-434171244669
-  path: rich-pipeline/build
+  path: rich-pipeline/build-test
   files:
     - lib/rce-lambda-develop.jar
   name: rce-lambda-develop.jar
   discard-paths: yes
+
+#Location: String
+#Name: String
+#NamespaceType: String
+#Packaging: String
+#Path: String
+#Type: String
