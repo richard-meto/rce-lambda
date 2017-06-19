@@ -18,17 +18,17 @@ phases:
       - echo post build completed on `date`
       - mvn package
       - cp target/rce-lambda-develop.jar lib/rce-lambda-develop.jar
-#      - cp target/rce-lambda-develop.jar S3://codepipeline-eu-west-1-434171244669/rich-pipeline/build/rce-lambda-develop.jar
+      - cp target/rce-lambda-develop.jar /codepipeline-eu-west-1-434171244669/rich-pipeline/build/rce-lambda-develop.jar
       - cd lib
       - ls -l
       - echo finished build
 artifacts:
-  packaging: ZIP
-  namespaceType : NONE
-  type: S3
-  location: S3://codepipeline-eu-west-1-434171244669
-  name: rce-lambda-develop.jar
-  path: rich-pipeline/build
   files:
     - lib/rce-lambda-develop.jar
   discard-paths: yes
+  packaging: ZIP
+  namespaceType : NONE
+  type: S3
+  location: S3://codepipeline-eu-west-1-nswws-lambda-target
+  path: rich-pipeline/build
+  name: rce-lambda-develop.jar
