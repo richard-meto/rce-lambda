@@ -16,8 +16,8 @@
 
     <distributionManagement>
         <repository>
-            <id>aws-release</id>
-            <name>AWS Release Repository</name>
+            <id>rce-release-repo</id>
+            <name>RCE Release Repository</name>
             <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
         </repository>
     </distributionManagement>
@@ -36,8 +36,8 @@
 
     <repositories>
         <repository>
-            <id>uk.gov.metoffice.nswws.dissemination.domain</id>
-            <name>nswws-dissemination-domain</name>
+            <id>rce.domain</id>
+            <name>rce-domain</name>
             <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
         </repository>
     </repositories>
