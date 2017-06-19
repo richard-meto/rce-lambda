@@ -28,7 +28,7 @@ artifacts:
   name: rce-lambda-develop.jar
   packaging: NONE
   namespaceType : NONE
-  path: rich-pipeline/build-test
+  path: rich-pipeline/build
   files:
     - lib/rce-lambda-develop.jar
   discard-paths: yes
