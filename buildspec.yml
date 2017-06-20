@@ -21,7 +21,6 @@ phases:
   post_build:
     commands:
       - echo post-build phase started on `date`
-      - mvn install:install-file -Dfile=src/main/resources/rce-domain-1.0.jar 
       - mvn package
       - echo copying build artifact rce-lambda-develop.jar to S3 target directory
       - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar

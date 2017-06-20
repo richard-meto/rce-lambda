@@ -26,14 +26,14 @@
         </dependencies>
     </dependencyManagement>
 
-<!--    <repositories>
+    <repositories>
         <repository>
             <id>repo-local</id>
             <name>repo</name>
             <url>file://${project.basedir}/rce-domain-1.0.jar</url>
         </repository>
     </repositories>
--->
+
 
     <dependencies>
         <dependency>
