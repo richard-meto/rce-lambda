@@ -14,7 +14,7 @@ public class RichiesEventHandler implements RequestStreamHandler {
 
     @Override
     public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) {
-        System.out.println("Test lambda invoked");
+        System.out.println("Test lambda invoked OK");
         RichEvent richEvent = new RichEvent("Richmond", "Everson");
         System.out.println("Test lambda finished");
         //NswwsWarningsRetrievedEvent n = new NswwsWarningsRetrievedEvent();
