@@ -12,6 +12,7 @@ phases:
       - mkdir -p rce/domain
       - echo copying dependencies from s3 to build path
       - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources
+      - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar rce/domain
       - echo pre-build phase completed on `date`
 #  build:
 #    commands:
