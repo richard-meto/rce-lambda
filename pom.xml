@@ -30,7 +30,7 @@
         <repository>
             <id>repo-local</id>
             <name>repo</name>
-            <url>file://${project.basedir}</url>
+            <url>file://${basedir}</url>
         </repository>
     </repositories>
 
