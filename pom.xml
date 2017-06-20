@@ -30,7 +30,7 @@
         <repository>
             <id>repo-local</id>
             <name>repo</name>
-            <url>file://${project.basedir}/src/main/resources/rce-domain-1.0.jar</url>
+            <url>file://${project.basedir}/rce-domain-1.0.jar</url>
         </repository>
     </repositories>
 
