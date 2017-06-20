@@ -13,15 +13,15 @@ phases:
       - echo copying dependencies from s3 to build path
       # - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources/rce-domain-1.0.jar
       - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/rce/domain/rce-domain/1.0/rce-domain-1.0.jar
-      - cd /src
+      - cd src
       - ls -l
-      - cd /rce
+      - cd rce
       - ls -l
-      - cd /domain
+      - cd domain
       - ls -l
-      - cd /rce-domain
+      - cd rce-domain
       - ls -l
-      - cd /1.0
+      - cd 1.0
       - ls -l
       - echo pre-build phase completed on `date`
 #  build:
