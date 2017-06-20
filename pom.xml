@@ -14,15 +14,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!--    <distributionManagement>
-            <repository>
-                <id>rce-release-repo</id>
-                <name>RCE Release Repository</name>
-                <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
-            </repository>
-        </distributionManagement>
-    -->
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -35,14 +26,13 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--    <repositories>
-            <repository>
-                <id>rce.domain</id>
-                <name>rce-domain</name>
-                <url>s3://codepipeline-eu-west-1-nswws-code-repo/release</url>
-            </repository>
-        </repositories>
-    -->
+    <repositories>
+        <repository>
+            <id>repo-local</id>
+            <name>repo</name>
+            <url>file://${project.basedir}/src/main/resources/rce-domain-1.0.jar</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -69,32 +59,15 @@
             <artifactId>aws-java-sdk-sts</artifactId>
         </dependency>
 
-<!--        <dependency>
-            <groupId>rce.domain</groupId>
-            <artifactId>rce-domain</artifactId>
-            <version>1.0</version>
-        </dependency>
-        -->
-
         <dependency>
             <groupId>rce.domain</groupId>
             <artifactId>rce-domain</artifactId>
             <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/resources/rce-domain-1.0.jar</systemPath>
         </dependency>
 
     </dependencies>
-    <build>
-        <!--        <extensions>
-                    <extension>
-                        <groupId>org.springframework.build</groupId>
-                        <artifactId>aws-maven</artifactId>
-                        <version>5.0.0.RELEASE</version>
-                    </extension>
-                </extensions>
-        -->
 
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -113,7 +86,6 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
 
 </project>
