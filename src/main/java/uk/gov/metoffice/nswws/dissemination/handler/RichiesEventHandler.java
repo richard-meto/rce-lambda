@@ -2,6 +2,7 @@ package uk.gov.metoffice.nswws.dissemination.handler;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import rce.domain.RichTestEvent;
 
@@ -16,6 +17,13 @@ public class RichiesEventHandler implements RequestStreamHandler {
     public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) {
         System.out.println("Test lambda invoked OK");
         RichTestEvent richEvent = new RichTestEvent("Richmond", "Evasion");
-        System.out.println("Test lambda finished");
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            System.out.println(objectMapper.writeValueAsString(richEvent));
+            System.out.println("Test lambda finished");
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
     }
 }
