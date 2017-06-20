@@ -20,10 +20,10 @@ phases:
 #      - echo running maven test phase
 #      - mvn test
 #      - echo build phase completed on `date`
-#  post_build:
-#    commands:
-#      - echo post-build phase started on `date`
-#      - mvn package
-#      - echo copying build artifact rce-lambda-develop.jar to S3 target directory
-#      - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
-#      - echo post-build completed on `date`
+  post_build:
+    commands:
+      - echo post-build phase started on `date`
+      - mvn package
+      - echo copying build artifact rce-lambda-develop.jar to S3 target directory
+      - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
+      - echo post-build completed on `date`
