@@ -19,6 +19,7 @@ public class RichiesEventHandler implements RequestStreamHandler {
         RichTestEvent richEvent = new RichTestEvent("Richmond", "Evasion");
         ObjectMapper objectMapper = new ObjectMapper();
         try {
+            System.out.println("Lambda output");
             System.out.println(objectMapper.writeValueAsString(richEvent));
             System.out.println("Test lambda finished");
         } catch (JsonProcessingException e) {
