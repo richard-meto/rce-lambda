@@ -9,7 +9,6 @@ phases:
     commands:
       - echo creating build directories and fetching dependencies...
       - mkdir lib
-      - mkdir -p src/rce/domain/rce-domain/1.0/
       - echo copying dependencies from s3 to build path
       - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources/rce-domain-1.0.jar
       - mvn install:install-file -Dfile=src/main/resources/rce-domain-1.0.jar -DgroupId=rce.domain -DartifactId=rce-domain -Dversion=1.0 -Dpackaging=jar
@@ -20,10 +19,10 @@ phases:
 #      - echo running maven test phase
 #      - mvn test
 #      - echo build phase completed on `date`
-#  post_build:
-#    commands:
-#      - echo post-build phase started on `date`
-#      - mvn package
-#      - echo copying build artifact rce-lambda-develop.jar to S3 target directory
-#      - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
-#      - echo post-build completed on `date`
+  post_build:
+    commands:
+      - echo post-build phase started on `date`
+      - mvn package
+      - echo copying build artifact rce-lambda-develop.jar to S3 target directory
+      - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
+      - echo post-build completed on `date`
