@@ -9,10 +9,10 @@ phases:
     commands:
       - echo creating build directories and fetching dependencies...
       - mkdir lib
-      - mkdir -p src/rce/main/domain/rce-domain/1.0/
+      - mkdir -p src/rce/domain/rce-domain/1.0/
       - echo copying dependencies from s3 to build path
       # - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources/rce-domain-1.0.jar
-      - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/rce/domain/rce-domain/1.0/rce-domain-1.0.jar
+      - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/rce/domain/rce-domain/1.0/rce-domain-1.0.jar
 #      - cd src
 #      - ls -l
 #      - cd rce
