@@ -15,12 +15,12 @@ phases:
       - aws s3 cp s3://codepipeline-eu-west-1-nswws-lambda-target/formation/rce_simple_lambda_cloud_formation_template.yml rce_simple_lambda_cloud_formation_template.yml
       - ls -l
       - echo pre-build phase completed on `date`
-#  build:
-#    commands:
-#      - echo build phase started on `date`
-#      - echo running maven test phase
-#      - mvn test
-#      - echo build phase completed on `date`
+  build:
+    commands:
+      - echo build phase started on `date`
+      - echo running maven test phase
+      - aws cloudformation package --template-file sam-template.yaml --s3-bucket codepipeline-eu-west-1-nswws-lambda-target/formation --output-template-file new-sam-template.yaml
+      - echo build phase completed on `date`
   post_build:
     commands:
       - echo post-build phase started on `date`
@@ -29,6 +29,6 @@ phases:
       - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
       - echo post-build completed on `date`
 artifacts:
-  packaging: none
+  type: zip
   files:
-    - rce_simple_lambda_cloud_formation_template.yml
+    - new-sam-template.yaml

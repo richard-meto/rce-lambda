@@ -1,0 +1,15 @@
+﻿AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  rcesimplelambda:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: >-
+        uk.gov.metoffice.nswws.dissemination.handler.RichiesEventHandler::handleRequest
+      Runtime: java8
+      CodeUri: s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
+      Description: ''
+      MemorySize: 512
+      Timeout: 15
+      Role: 'arn:aws:iam::894951693940:role/nswws_execute_lambda_with_pipeline'
