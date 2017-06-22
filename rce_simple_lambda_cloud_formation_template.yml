@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: An AWS Serverless Specification template describing your function.
+Description: AWS template for rce-simple-lambda lambda function
 Resources:
   rcesimplelambda:
     Type: 'AWS::Lambda::Function'

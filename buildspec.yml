@@ -11,8 +11,8 @@ phases:
       - mkdir lib
       - echo copying dependencies from s3 to build path
       - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources/rce-domain-1.0.jar
+      # install domain artifact to local build
       - mvn install:install-file -Dfile=src/main/resources/rce-domain-1.0.jar -DgroupId=rce.domain -DartifactId=rce-domain -Dversion=1.0 -Dpackaging=jar
-#       - aws s3 cp s3://codepipeline-eu-west-1-nswws-lambda-target/formation/rce_simple_lambda_cloud_formation_template.yml rce_simple_lambda_cloud_formation_template.yml
       - echo pre-build phase completed on `date`
   build:
     commands:
@@ -25,9 +25,10 @@ phases:
       - mvn package
       - echo copying build artifact rce-lambda-develop.jar to S3 target directory
       - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
+      - ls -l
       - echo post-build completed on `date`
 artifacts:
   type: zip
   files:
+    # build file is included in the github repo
     - rce_simple_lambda_cloud_formation_template.yml
-#     - new-sam-template.yaml
