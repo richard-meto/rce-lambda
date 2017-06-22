@@ -12,21 +12,13 @@ phases:
       - echo copying dependencies from s3 to build path
       - aws s3 cp s3://codepipeline-eu-west-1-nswws-code-repo/release/rce-domain-1.0.jar src/main/resources/rce-domain-1.0.jar
       - mvn install:install-file -Dfile=src/main/resources/rce-domain-1.0.jar -DgroupId=rce.domain -DartifactId=rce-domain -Dversion=1.0 -Dpackaging=jar
-
 #       - aws s3 cp s3://codepipeline-eu-west-1-nswws-lambda-target/formation/rce_simple_lambda_cloud_formation_template.yml rce_simple_lambda_cloud_formation_template.yml
-
       - echo pre-build phase completed on `date`
   build:
     commands:
       - echo build phase started on `date`
       - echo running maven test phase
       # - mvn test
-      # package SAM application and upload to S3 bucket
-      # - aws cloudformation package --template-file sam-template.yaml --s3-bucket codepipeline-eu-west-1-nswws-lambda-target --output-template-file new-sam-template.yaml
-      - echo =====================================================================================================
-      - ls -l
-      - echo =====================================================================================================
-      - echo build phase completed on `date`
   post_build:
     commands:
       - echo post-build phase started on `date`
