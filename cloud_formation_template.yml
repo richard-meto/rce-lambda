@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  rcesimplelambda:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Code:
+        S3Bucket: codepipeline-eu-west-1-nswws-lambda-target
+        S3Key: build/rce-lambda-develop.jar
+      Description: 'Simple test lambda deployment'
+      Tags:
+        - Value: SAM
+          Key: 'lambda:createdBy'
+      MemorySize: 512
+      Handler: >-
+        uk.gov.metoffice.nswws.dissemination.handler.RichiesEventHandler::handleRequest
+      Role: 'arn:aws:iam::894951693940:role/nswws_execute_lambda_with_pipeline'
+      Timeout: 15
+      Runtime: java8
