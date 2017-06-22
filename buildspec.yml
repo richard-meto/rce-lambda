@@ -20,8 +20,6 @@ phases:
       - echo running maven test phase
       # package SAM application and upload to S3 bucket
       - aws cloudformation package --template-file sam-template.yaml --s3-bucket codepipeline-eu-west-1-nswws-lambda-target/formation --output-template-file new-sam-template.yaml
-      # package SAM application and save to output for deployment
-      - aws cloudformation package --template-file sam-template.yaml --output-template-file new-sam-template.yaml
       - echo =====================================================================================================
       - ls -l
       - echo =====================================================================================================
