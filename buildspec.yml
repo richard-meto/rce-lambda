@@ -19,7 +19,7 @@ phases:
     commands:
       - echo build phase started on `date`
       - echo running maven test phase
-      - aws cloudformation package --template-file sam-template.yaml --s3-bucket codepipeline-eu-west-1-nswws-lambda-target/formation --output-template-file new-sam-template.yaml
+      - aws cloudformation package --template-file rce_simple_lambda_cloud_formation_template.yml --s3-bucket codepipeline-eu-west-1-nswws-lambda-target/formation --output-template-file new-sam-template.yaml
       - echo build phase completed on `date`
   post_build:
     commands:
