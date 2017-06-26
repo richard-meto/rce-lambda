@@ -16,7 +16,7 @@ public class RichiesEventHandler implements RequestStreamHandler {
     @Override
     public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) {
         System.out.println("Test lambda invoked OK");
-        RichTestEvent richEvent = new RichTestEvent("Richmond", "Evasion");
+        RichTestEvent richEvent = new RichTestEvent("Ricardo", "Evasion");
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             System.out.println("Lambda output");
