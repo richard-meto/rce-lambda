@@ -25,8 +25,6 @@ phases:
       - mvn package
       - echo copying build artifact rce-lambda-develop.jar to S3 target directory
       - aws s3 cp target/rce-lambda-develop.jar s3://codepipeline-eu-west-1-nswws-lambda-target/build/rce-lambda-develop.jar
-
-      # - aws lambda create-function --function-name rce-test-lambda-cli --runtime java8 --role arn:aws:iam::894951693940:role/nswws_alpha_lambda_execute_role --handler uk.gov.metoffice.nswws.dissemination.handler.RichiesEventHandler::handleRequest --code S3Bucket=codepipeline-eu-west-1-nswws-lambda-target,S3Key=/build/rce-lambda-develop.jar,S3ObjectVersion=1.0 --timeout 30 --memory-size 128
       - ls -l
       - echo post-build completed on `date`
 artifacts:
