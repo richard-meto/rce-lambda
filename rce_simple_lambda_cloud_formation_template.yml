@@ -7,7 +7,7 @@ Resources:
       Code:
         S3Bucket: codepipeline-eu-west-1-nswws-lambda-target
         S3Key: build/rce-lambda-develop.jar
-        S3ObjectVersion: LATEST
+        S3ObjectVersion: "$LATEST"
       Description: 'Simple test lambda deployment'
       Tags:
         - Value: SAM
